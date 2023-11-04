@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Historial from "./componentes/Historial";
-import Datos from "./componentes/datos.json";
+// import Datos from "./componentes/datos.json";
 import Inicio from "./componentes/Inicio";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" Component={Inicio} />
           <Route path="/historial" Component={Historial} />
-          <Route path="/datos.json" Component={Datos} />
+          {/* <Route path="/datos.json" Component={Datos} /> */}
         </Routes>
       </BrowserRouter>
     </>
