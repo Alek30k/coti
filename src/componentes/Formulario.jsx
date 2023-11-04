@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { calcularTotal } from "../helpers";
 import { useDataFetch } from "./DataFetchContext";
-import Datos from "../../datos.json";
+// import Datos from "../../datos.json";
+
+const data = {
+  cantidadPrestamo: [1000, 2000, 3000, 4000],
+  plazoPagar: [3, 6, 12, 24],
+  tasasInteres: [0.03, 0.05, 0.07, 0.1],
+};
 
 const Formulario = ({
   cantidad,
@@ -58,7 +64,6 @@ const Formulario = ({
   };
   const horaActual = obtenerHoraActual();
   localStorage.setItem("horaEnvioFormulario", horaActual);
-  const data = Datos;
 
   return (
     <>
