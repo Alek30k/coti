@@ -14,7 +14,7 @@ const DataFetchProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    fetch("cotiale.vercel.app/datos.json")
+    fetch("https://coti.vercel.app/datos.json")
       .then((response) => {
         if (response.ok) {
           return response.json();
