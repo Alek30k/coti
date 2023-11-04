@@ -1,0 +1,120 @@
+.table-container {
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #df1212;
+}
+
+th {
+  background-color: #4b0404;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+.center-link {
+  text-align: center;
+}
+
+.center-link a {
+  display: inline-block;
+}
+
+@media (min-width: 320px) {
+  .header {
+    text-align: center;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 5px;
+    font-size: 12px;
+  }
+  .center-link {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 20px;
+    text-align: center;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .center-link {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 30px;
+    text-align: center;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 15px;
+    font-size: 16px;
+  }
+  .center-link {
+    text-align: center;
+  }
+}
