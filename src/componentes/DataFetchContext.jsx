@@ -14,18 +14,8 @@ const DataFetchProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    fetch("./datos.json")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(
-          "Error " +
-            response.status +
-            " al llamar al API: " +
-            response.statusText
-        );
-      })
+    fetch("..//../datos.json")
+      .then((response) => response.json())
       .then((data) => setOpciones(data))
       .catch((error) => {
         console.error("Error al cargar las opciones:", error);
