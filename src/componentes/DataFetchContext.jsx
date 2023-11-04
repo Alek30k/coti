@@ -13,24 +13,24 @@ const DataFetchProvider = ({ children }) => {
     tasasInteres: [],
   });
 
-  useEffect(() => {
-    fetch("https://coti.vercel.app/../../datos.json")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(
-          "Error " +
-            response.status +
-            " al llamar al API: " +
-            response.statusText
-        );
-      })
-      .then((data) => setOpciones(data))
-      .catch((error) => {
-        console.error("Error al cargar las opciones:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://coti.vercel.app/datos.json")
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       throw new Error(
+  //         "Error " +
+  //           response.status +
+  //           " al llamar al API: " +
+  //           response.statusText
+  //       );
+  //     })
+  //     .then((data) => setOpciones(data))
+  //     .catch((error) => {
+  //       console.error("Error al cargar las opciones:", error);
+  //     });
+  // }, []);
 
   return (
     <DataFetchContext.Provider value={opciones}>

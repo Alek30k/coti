@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { calcularTotal } from "../helpers";
 import { useDataFetch } from "./DataFetchContext";
+import Datos from "../../datos.json";
 
 const Formulario = ({
   cantidad,
@@ -57,6 +58,7 @@ const Formulario = ({
   };
   const horaActual = obtenerHoraActual();
   localStorage.setItem("horaEnvioFormulario", horaActual);
+  const data = Datos;
 
   return (
     <>
@@ -66,7 +68,7 @@ const Formulario = ({
             <label>Cantidad Prestamo</label>
             <select onChange={handleCantidadChange} value={cantidad}>
               <option value="">Seleccionar</option>
-              {opciones.cantidadPrestamo.map((valor) => (
+              {data.cantidadPrestamo.map((valor) => (
                 <option key={valor} value={valor}>
                   {valor}
                 </option>
@@ -77,7 +79,7 @@ const Formulario = ({
             <label>Plazo para pagar</label>
             <select onChange={handlePlazoChange} value={plazo}>
               <option value="">Seleccionar</option>
-              {opciones.plazoPagar.map((plazo) => (
+              {data.plazoPagar.map((plazo) => (
                 <option key={plazo} value={plazo}>
                   {plazo} meses
                 </option>
@@ -88,7 +90,7 @@ const Formulario = ({
             <label>Tasa de Interés</label>
             <select onChange={handleTasaInteresChange} value={tasaInteres}>
               <option value="">Seleccionar</option>
-              {opciones.tasasInteres.map((tasa) => (
+              {data.tasasInteres.map((tasa) => (
                 <option key={tasa} value={tasa}>
                   {tasa * 100}% ({tasa})
                 </option>
