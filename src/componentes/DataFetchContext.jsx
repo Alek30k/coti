@@ -6,12 +6,6 @@ export const useDataFetch = () => {
   return useContext(DataFetchContext);
 };
 
-// const data = {
-//   cantidadPrestamo: [1000, 2000, 3000, 4000],
-//   plazoPagar: [3, 6, 12, 24],
-//   tasasInteres: [0.03, 0.05, 0.07, 0.1],
-// };
-
 const DataFetchProvider = ({ children }) => {
   const [opciones, setOpciones] = useState({
     cantidadPrestamo: [],
@@ -21,7 +15,17 @@ const DataFetchProvider = ({ children }) => {
 
   useEffect(() => {
     fetch("datos.json")
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(
+          "Error " +
+            response.status +
+            " al llamar al API: " +
+            response.statusText
+        );
+      })
       .then((data) => setOpciones(data))
       .catch((error) => {
         console.error("Error al cargar las opciones:", error);
