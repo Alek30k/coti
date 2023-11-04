@@ -14,7 +14,7 @@ const DataFetchProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    fetch("datos.json")
+    fetch("./datos.json")
       .then((response) => {
         if (response.ok) {
           return response.json();
